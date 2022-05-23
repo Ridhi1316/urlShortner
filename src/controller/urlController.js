@@ -1,6 +1,4 @@
 const urlMOdel = require("../model/urlModel")
-// const nanoid = require('nanoid')
-//var { nanoid } = require("nanoid");
 const validUrl = require('valid-url')
 const redis = require('redis')
 const { customAlphabet } = require ('nanoid')
