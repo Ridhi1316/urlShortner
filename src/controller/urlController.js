@@ -24,17 +24,8 @@ const redisClient = redis.createClient(
 const SET_ASYNC = promisify(redisClient.SETEX).bind(redisClient);
 const GET_ASYNC = promisify(redisClient.GET).bind(redisClient);
 
-  
 
-// const isValid = function (value) {
-//     if (typeof value === "undefined" || value === null) return false;
-//     if (typeof value === "string" && value.trim().length === 0) return false;
-//     return true;
-// };
-
-
-
-
+//CreateURL
 const createUrl = async (req, res) => {
     try{
 
@@ -58,9 +49,6 @@ const createUrl = async (req, res) => {
     
                     const nanoid = customAlphabet('abcdefghijAB', 12)
                     let urlCode = nanoid()
-                    //console.log(codeurl)
-                    //let urlCode = codeurl.toLowerCase()
-                   // console.log(urlCode)
                     
                     let shortUrl = baseUrl + "/" + urlCode;
 
@@ -89,7 +77,7 @@ const createUrl = async (req, res) => {
     }
 }
 
-
+//Get the URL 
 const getUrl = async (req, res) => {
 
     try{
